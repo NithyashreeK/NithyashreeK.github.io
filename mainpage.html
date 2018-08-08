@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+    body{
+      background: url('scene2.jpg')  no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    .content {
+      margin: 80px 50px 50px 50px;
+      padding: 70px 70px;
+       text-align: center;
+    }
+
+    .common {
+      font-family: Courier; 
+      text-decoration: underline; 
+      font-weight: bolder;
+    }
+
+    .para {
+      font-family: Courier; 
+      color: white; 
+      font-size: 20px
+    }
+
+    .avatar {
+        width: 115px;
+        height: 130px;
+        border-radius: 80%;
+    }
+
+    .fab {
+      color: black;
+    }
+
+  </style>
+
+</head>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+var showText = function (target, message, index, interval) {    
+  if (index < message.length) { 
+    $(target).append(message[index++]); 
+    setTimeout(function () { showText(target, message, index, interval); }, interval); 
+  }
+
+}
+   
+$(function () { 
+ 
+  showText("#msg", "WELCOME!", 0, 1000);    
+ 
+}); 
+
+if (self !== top){
+    top.location.replace(self.location.href)
+}
+
+$('div#spop').hide();
+
+$('#link').click(function(e) {
+  $('div#spop').show();
+});
+
+ // $('#fff').click(function(e){
+ //     e.stopPropagation();
+ // });
+
+});
+
+</script>
+
+<body>
+<div class="container">
+  <ul class="nav nav-tabs" style="font-family: Courier">
+    <li><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1">About</a></li>
+    <li><a data-toggle="tab" href="#menu2">Skills</a></li>
+    <li class="active"><a data-toggle="tab" href="#menu3">Projects</a></li>
+  </ul>
+
+  <div class="tab-content">
+    
+    <div id="home" class="tab-pane fade content">
+      <div id="msg" style="font-weight: bolder; font-size: 50px; text-shadow: 3px 2px grey"></div>
+      <p style="font-family: Courier; color: white; font-size: 20px">
+        Developer | MS in Computer Engineering | University of Central Florida
+        <br><br>
+        Hello! My name is Nithyashree Kempegowda and I aspire to become an excellent developer. I love programming, writing, reading and travelling. But most of all, I love turning ideas into reality.
+        <br><br>
+        Contact: nithya10@knights.ucf.edu
+      </p>
+      <!-- <img src="Me5.jpg" alt="Avatar" class="avatar"> -->
+      <br>
+      <br>
+      <div><a href="https://www.instagram.com/nithya104/"><i class="fab fa-instagram fa-lg"></i></a>&nbsp;&nbsp;<a href="https://www.facebook.com/nithya.sk10"><i class="fab fa-facebook-f fa-lg"></i></a>&nbsp;&nbsp;<a href="https://github.com/NithyashreeK"><i class="fab fa-github fa-lg"></i></a>&nbsp;&nbsp;<a href="https://www.linkedin.com/in/nithyashree-kempegowda-4779b2103/"><i class="fab fa-linkedin-in fa-lg"></i></a></div>
+    </div>
+
+    <div id="menu1" class="tab-pane fade content">
+      <h3 class="common">Education</h3>
+      <p class="para">
+        University of Central Florida       [August 2016 - May 2018]
+        <br>
+        Master of Science in Computer Engineering
+        <br><br>
+        BMS Institute of Technology & Management  [September 2011 - June 2015]
+        <br>
+        Electronics and Communication Engineering
+        <br>
+      </p>
+      <h3 class="common">Work Experience</h3>
+      <p class="para">
+        The Right Profile       [June 2017 - May 2018]
+        <br>
+        Full Stack Developer
+        <br><br>
+        Cognizant Technology Solutions  [Jan 2016 - June 2016]
+        <br>
+        Programmer Analyst Trainee
+      </p>
+    </div>
+
+    <div id="menu2" class="tab-pane fade content">
+      <h3 class="common">Programming Languages</h3>
+      <p class="para">
+        PHP, JavaScript, ajax, HTML, CSS, MySQL, bootstrap, Java, Ruby on Rails, C, VHDL, Verilog, Simulink and MATLAB, Assembly language programming for various processors/controllers 
+      </p>
+      <h3 class="common">Tools & Environment</h3>
+      <p class="para">
+        ShiftEdit, phpMyAdmin, Visual Studio, Andriod Studio, Eclipse, Keil uVision, Cadence and Xilinx Software, GitHub, Windows, Linux, Selenium, Apache Hadoop
+      </p>
+      <h3 class="common">Libraries</h3>
+      <p class="para">
+        jQuery, Reveal.js, Datatables.js
+      </p>
+      <h3 class="common">Development</h3>
+      <p class="para">
+        Agile and Scrum methodologies, Quality Assurance and Engineering
+      </p>
+    </div> 
+
+    <div id="menu3" class="tab-pane fade content in active">
+      <h3 class="common">Game-of-life</h3>
+      <div id="fff">
+        <p class="para" id="link">Here
+          <div id="spop" style="background-color: rgba(150, 150, 150, 0.5); overflow: hidden; position: fixed; left: 0px; top: 0px; bottom: 0px; right: 0px; z-index: 1000; display:block;">
+            <button type='button' class='close' onclick='$(this).parent().hide();'>CLOSE</button>
+            <div style="width: 570px; margin: 50px auto; padding: 20px 20px 20px 20px;">
+                <iframe src="index.html" width="400" height="410" frameborder="0"></iframe>
+            </div>
+          </div>
+        </p>
+      </div>
+
+      <h3 class="common">Tic-Tac-Toe</h3>
+      <p class="para">
+        <a href="ttt.html" target="_blank">Here</a>
+      </p>
+      <h3 class="common">Academic Projects</h3>
+      <p class="para">
+        Website development for Statusphere
+        <br>
+        Part of a team that developed a web app for connecting influencers with brands.
+        <br>
+        Extensively worked on the front-end HTML implementation of the web app for enhanced user experience
+        <br>
+        Skills used include CSS, HTML and javaScript
+        <br>
+        Developed multiple web pages that incorporated constant changes which the client required
+        <br>
+        Successful completion of project was possible in this team of 11 members through constant communication. Github, Trello and Slack were some of the applications used for coordination and to keep everyone updated about the team’s progress
+      </p>
+      <h3 class="common">Project</h3>
+      <p class="para">
+        
+      </p>
+    </div>    
+    
+  </div>
+
+</div>
+
+</body>
+</html>
