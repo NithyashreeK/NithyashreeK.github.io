@@ -72,17 +72,67 @@ function emptySpot() {
 }
 
 function bestSpot() {
-	return emptySpot()[0];
+	return minimax(ori, cR).index;
+	//return emptySpot()[0];
 }
 
 function checkTie() {
 	if(emptySpot().length == 0) {
 		for(var i = 0; i < cells.length; i++) {
-			cells[i].style.backgroundColor = "green";
+			cells[i].style.backgroundColor = "limegreen";
 			cells[i].removeEventListener('click', turnClick, false);
 		}
 		declareWinner("Tie Game!");
 		return true;
 	}
 	return false;
+}
+
+function minimax(newBoard, player){
+	let avail = emptySpot(newBoard);
+	if(checkWin(newBoard, zE)){
+		return {score: -10};
+	}else if(checkWin(newBoard, cR)){
+		return {score: 10};
+	}else if(avail.length == 0){
+		return {score: 1};
+	}
+
+	let moves = [];
+	for(let i = 0; i < avail.length; i++){
+		let move = {};
+		move.index = newBoard[avail[i]];
+		newBoard[avail[i]] = player;
+
+		if(player == cR){
+			let result = minimax(newBoard, zE);
+			move.score = result.score;
+		}else{
+			let result = minimax(newBoard, cR);
+			move.score = result.score;
+		}
+
+		newBoard[avail[i]] = move.index;
+		moves.push(move);
+	}
+
+	let bestMove;
+	if(player == cR){
+		let bestScore = -10000;
+		for(let i=0; i<moves.length; i++){
+			if(moves[i].score > bestScore){
+				bestScore = moves[i].score;
+				bestMove = i;
+			}
+		}
+	}else{
+		let bestScore = 10000;
+		for(let i=0; i<moves.length; i++){
+			if(moves[i].score < bestScore){
+				bestScore = moves[i].score;
+				bestMove = i;
+			}
+		}
+	}
+	return moves[bestMove];
 }
